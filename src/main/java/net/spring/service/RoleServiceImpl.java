@@ -13,6 +13,6 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Role findByRole(String role) {
-        return roleRepository.findByRole(role).orElse(new Role());
+        return roleRepository.findByRole(role).orElseThrow(IncorrectRoleException::new);
     }
 }
